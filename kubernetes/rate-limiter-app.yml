@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rate-limiter-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rate-limiter-app
+  template:
+    metadata:
+      labels:
+        app: rate-limiter-app
+    spec:
+      containers:
+      - name: rate-limiter-app
+        image: nikaris/rate-limiter:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: RATE_LIMIT
+          valueFrom:
+            configMapKeyRef:
+              name: environment-config
+              key: RATE_LIMIT
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: redis-secret
+              key: REDIS_HOST
+
+

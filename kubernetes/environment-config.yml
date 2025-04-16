@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: environment-config
+data:
+  RATE_LIMIT: "3"
+  REDIS_HOST: "redis"

@@ -4,7 +4,8 @@ import time
 import os
 
 app = Flask(__name__)
-redis_client = redis.StrictRedis(host=os.getenv("REDIS_HOST","localhost"), port=6379, db=0)
+redis_host = os.getenv("REDIS_HOST","localhost")
+redis_client = redis.StrictRedis(host=redis_host, port=6379, db=0)
 
 def get_client_ip():
     if request.headers.get('X-Forwarded-For'):
