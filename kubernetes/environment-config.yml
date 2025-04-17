@@ -4,4 +4,4 @@ metadata:
   name: environment-config
 data:
   RATE_LIMIT: "3"
-  REDIS_HOST: "redis"
+  EXPIRE_TIME: "15"

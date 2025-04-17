@@ -15,10 +15,11 @@ def get_client_ip():
 def is_rate_limited(ip, endpoint, limit):
     current_time = int(time.time())
     key = f"{ip}:{endpoint}"
+    expire_time = os.getenv("EXPIRE_TIME","1")
     request_count = redis_client.get(key)
 
     if request_count is None:
-        redis_client.set(key, 1, ex=10)
+        redis_client.set(key, 1, ex=expire_time)
         return False
     elif int(request_count) < limit:
         redis_client.incr(key)
