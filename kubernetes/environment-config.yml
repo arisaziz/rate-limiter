@@ -4,4 +4,4 @@ metadata:
   name: environment-config
 data:
   RATE_LIMIT: "3"
-  EXPIRE_TIME: "15"
+  EXPIRE_TIME: "5"
