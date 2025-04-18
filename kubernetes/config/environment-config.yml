@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: environment-config
 data:
-  RATE_LIMIT: "3"
-  EXPIRE_TIME: "60"
+  RATE_LIMIT: "100"
+  EXPIRE_TIME: "1"
