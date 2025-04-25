@@ -1,0 +1,6 @@
+---------------
+This is {{ .Values.environment }} environment 
+Access to application by port {{ .Values.service.nodePort }}
+this using 
+RATE_LIMIT = {{ .Values.RATE_LIMIT}}
+EXPIRE_TIME = {{ .Values.EXPIRE_TIME}}

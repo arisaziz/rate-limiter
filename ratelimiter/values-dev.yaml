@@ -1,0 +1,5 @@
+RATE_LIMIT: "20"
+EXPIRE_TIME: "20"
+service:
+  nodePort: 30111
+environment: dev

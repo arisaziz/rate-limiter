@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: environment-config
+data:
+  RATE_LIMIT: "{{ .Values.RATE_LIMIT }}"
+  EXPIRE_TIME: "{{ .Values.EXPIRE_TIME }}"

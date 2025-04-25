@@ -1,0 +1,5 @@
+RATE_LIMIT: "100"
+EXPIRE_TIME: "15"
+service:
+  nodePort: 30110
+environment: default
